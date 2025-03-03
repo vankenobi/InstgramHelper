@@ -65,18 +65,18 @@ for username in usernames:
         # Kullanıcı sayfasını aç
         driver.get(f'https://www.instagram.com/{username}/')
 
-        time.sleep(0.5)
-        text = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[2]/div/div/div[2]/div/div/button/div/div').text
+        time.sleep(0.8)
+        text = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[2]/div/div/div[2]/div/div/button/div/div').text
         if(text == "Requested"):
 
             # "İstek Gönderildi" butonuna tıkla
-            time.sleep(0.5)
-            follow_request_button = driver.find_element(By.XPATH, '/html/body/div[2]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[2]/div/div/div[2]/div/div/button')
+            time.sleep(0.8)
+            follow_request_button = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[2]/div/div/div[1]/div[2]/div/div[1]/section/main/div/header/section[2]/div/div/div[2]/div/div/button')
             follow_request_button.click()
 
             # "Takibi Bırak" butonuna tıkla
-            time.sleep(2)
-            unfollow_button = driver.find_element(By.XPATH, '/html/body/div[5]/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div/div/button[1]')
+            time.sleep(1)
+            unfollow_button = driver.find_element(By.XPATH, '/html/body/div[4]/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div/div/button[1]')
             unfollow_button.click()
 
             print(f"{username} adlı kullanıcıdan takip isteği geri çekildi.")
